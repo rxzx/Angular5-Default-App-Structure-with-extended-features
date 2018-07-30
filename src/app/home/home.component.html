@@ -1,0 +1,33 @@
+<div id="home">
+  <h2>Home</h2>
+
+  <div>
+    <p-table 
+      [value]="data" 
+      [paginator]="true" 
+      [rows]="10" 
+      (onLazyLoad)="loadCarsLazy($event)" 
+      [lazy]="true" 
+      (onLazyLoad)="loadCarsLazy($event)"
+      [paginator]="true" 
+      [totalRecords]="totalRecords" [loading]="loading"
+      >
+      <ng-template pTemplate="header">
+
+        <tr>
+          <th>Id</th>
+          <th>City</th>
+          <th>Province</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-d>
+        <tr>
+          <td>{{d.id}}</td>
+          <td>{{d.name}}</td>
+          <td>{{d.province}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+</div>
