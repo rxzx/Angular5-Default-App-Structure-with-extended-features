@@ -1,33 +1,31 @@
 <div id="home">
-  <h2>Home</h2>
 
-  <div>
-    <p-table 
-      [value]="data" 
-      [paginator]="true" 
-      [rows]="10" 
-      (onLazyLoad)="loadCarsLazy($event)" 
-      [lazy]="true" 
-      (onLazyLoad)="loadCarsLazy($event)"
-      [paginator]="true" 
-      [totalRecords]="totalRecords" [loading]="loading"
-      >
-      <ng-template pTemplate="header">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h2>All Cities</h2>
+    </div>
+    <div class="ui-g-12">
+      <p-table #dt [columns]="cols" [value]="data" [paginator]="true" [rows]="50" [paginator]="true" [totalRecords]="totalRecords">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+              <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+          </tr>
+          <tr>
+            <th *ngFor="let col of columns">
+              <input pInputText type="text" size="75" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            </th>
 
-        <tr>
-          <th>Id</th>
-          <th>City</th>
-          <th>Province</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-d>
-        <tr>
-          <td>{{d.id}}</td>
-          <td>{{d.name}}</td>
-          <td>{{d.province}}</td>
-        </tr>
-      </ng-template>
-    </p-table>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns"> {{rowData[col.field]}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
   </div>
-
 </div>
