@@ -17,9 +17,8 @@ export class HomeComponent implements OnInit {
     private api: ApiService
   ) { }
 
-
+  
   ngOnInit() {
-
     this.api.getData()
       .subscribe((response: any) => {
         this.data = response.city || [];
@@ -31,7 +30,9 @@ export class HomeComponent implements OnInit {
 
     this.cols = [
       { field: 'name', header: 'Name' },
-      { field: 'province', header: 'Province' }
+      { field: 'province', header: 'Province' },
+      { field: 'name', header: 'Name2' },
+      { field: 'province', header: 'Province2' }
     ];
 
     this.loading = true;

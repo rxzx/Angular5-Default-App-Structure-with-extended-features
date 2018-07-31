@@ -1,7 +1,7 @@
 <div id="home">
   <div class="ui-g">
     <div class="ui-g-12">
-      <h2>All Cities</h2>
+      <h2><i class="fas fa-table"></i> All Cities</h2>
     </div>
     <div class="ui-g-12">
       <p-table #dt [columns]="cols" [value]="data" [paginator]="true" [rows]="50" [paginator]="true" [totalRecords]="totalRecords">
@@ -10,11 +10,9 @@
             <th *ngFor="let col of columns">
               <div [pSortableColumn]="col.field">
                 <span>{{col.header}}</span>
-                <span>
-                  <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
-                </span>
+                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
               </div>
-              <input pInputText type="text" size="75" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+              <input pInputText type="text" size="25" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
             </th>
             <th style="width: 4%;">
               <span>

@@ -7,7 +7,6 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
-
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './common/app-header/app-header.component';
 import { AppFooterComponent } from './common/app-footer/app-footer.component';
