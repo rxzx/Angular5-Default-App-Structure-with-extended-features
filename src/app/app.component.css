@@ -1,3 +1,7 @@
 /* @import url("../../node_modules/primeicons/primeicons.css");
 @import url("../../node_modules/primeng/resources/themes/omega/theme.css");
 @import url("../../node_modules/primeng/resources/primeng.min.css"); */
+
+
+.pull-right{    float: right;   }
+.pull-left{    float: left;   }

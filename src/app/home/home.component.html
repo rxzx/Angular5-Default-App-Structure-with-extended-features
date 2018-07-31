@@ -1,5 +1,4 @@
 <div id="home">
-
   <div class="ui-g">
     <div class="ui-g-12">
       <h2>All Cities</h2>
@@ -9,20 +8,25 @@
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th *ngFor="let col of columns">
-              {{col.header}}
-              <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
-            </th>
-          </tr>
-          <tr>
-            <th *ngFor="let col of columns">
+              <div [pSortableColumn]="col.field">
+                <span>{{col.header}}</span>
+                <span>
+                  <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </span>
+              </div>
               <input pInputText type="text" size="75" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
             </th>
-
+            <th style="width: 4%;">
+              <span>
+                <i class="far fa-file-excel"></i>
+              </span>
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
           <tr>
             <td *ngFor="let col of columns"> {{rowData[col.field]}}</td>
+            <td></td>
           </tr>
         </ng-template>
       </p-table>
