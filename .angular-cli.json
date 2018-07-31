@@ -21,11 +21,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [
-        "../node_modules/lodash/lodash.js",
-        "../node_modules/moment/moment.js",
-        "../node_modules/toastr/toastr.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
