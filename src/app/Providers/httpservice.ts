@@ -3,13 +3,13 @@ import { Injectable, Injector } from '@angular/core';
 
 @Injectable()
 export class HTTPService {
-  private baseUrl = '';
+  private baseUrl = '/';
   constructor(
     private http: HttpClient
   ) {
   }
   getData() {
-    return this.http.get(`${this.baseUrl}/assets/data/election.json`);
+    return this.http.get(`${this.baseUrl}assets/data/election.json`);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HTTPService } from '../../Providers/httpservice';
 
 @Component({
   selector: 'app-public-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class PublicHomeComponent implements OnInit {
+  constructor() {
 
-  constructor() { }
-
-  ngOnInit() {
   }
+  ngOnInit() {
+
+  }
+
 
 }

@@ -5,11 +5,14 @@ import { PrivateHeaderComponent } from './header/header.component';
 import { PrivateHomeComponent } from './home/home.component';
 import { PrivateComponent } from './private.component';
 import { AppRoutingModule } from '../app-routing.module';
-
+import { DataTableModule } from 'primeng/datatable';
+import { TableModule } from 'primeng/table';
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTableModule,
+    TableModule
   ],
   declarations: [PrivateFooterComponent, PrivateHeaderComponent, PrivateHomeComponent, PrivateComponent]
 })

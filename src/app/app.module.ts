@@ -15,30 +15,29 @@ import { PublicModule } from './public/public.module';
 import { HTTPService } from './Providers/httpservice';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
-
-
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent
   ],
   imports: [
-
-  BrowserModule,
+    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    DataTableModule,
-    TableModule,
     AppRoutingModule,
     PublicModule,
-    PrivateModule
+    PrivateModule,
+    ToastModule
   ],
   providers: [
     HttpClient,
     HTTPService,
     AlwaysAuthGuard,
-    OnlyLoggedInUsersGuard
+    OnlyLoggedInUsersGuard,
+    MessageService
   ],
   bootstrap: [AppComponent],
   schemas: [

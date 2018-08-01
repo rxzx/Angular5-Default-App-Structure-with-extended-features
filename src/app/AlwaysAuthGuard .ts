@@ -29,15 +29,15 @@ export class OnlyLoggedInUsersGuard implements CanActivate {
 
     private router: Router,
   ) { }
-  myvalue = false;
+  myvalue = true;
   canActivate() {
 
     if (this.myvalue) {
-
-        this.router.navigate(['/private/home']);
+      // window.alert('Access');
+        // this.router.navigate(['/private/home']);
       return true;
     } else {
-        window.alert('You dont have permission to view this page');
+        // window.alert('You dont have permission to view this page');
       this.router.navigate(['/sign-in']);
       return false;
     }

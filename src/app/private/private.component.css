@@ -1,0 +1,16 @@
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.container {
+  padding: 1% 0% 0% 0%;
+}
+
+.container:h2 {
+  color: #9e9999;
+  font-family: Arial, Helvetica, sans-serif;
+}

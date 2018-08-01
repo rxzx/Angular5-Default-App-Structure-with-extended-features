@@ -10,7 +10,8 @@ import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   declarations: [PublicHeaderComponent, PublicFooterComponent, PublicHomeComponent, PublicSigninComponent, PublicComponent],
   schemas: [
