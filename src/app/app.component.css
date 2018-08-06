@@ -3,3 +3,7 @@
 @import url("../../node_modules/primeng/resources/primeng.min.css"); */
 
 
+html, body {
+    height: 100%;
+    margin: 0;
+  }

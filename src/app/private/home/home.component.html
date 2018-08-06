@@ -1,8 +1,11 @@
 <div id="home" class="row">
   <div class="col-lg-12 col-md-12 col-xl-12">
     <h2 class="pull-left"><i class="fas fa-table"></i> All Cities</h2>
-    <button class="btn btn-danger pull-right" (click)="openModel()">Open Modal</button>
-  
+    <div class="pull-right">
+        <button class="btn openPopup" (click)="openModel()">Open Popup</button>
+        <button class="btn openPopup" (click)="openGalleryModel()">View Image</button>
+    </div>
+    <div class="clearfix"></div>
   </div>
   <div class="col-lg-12 col-md-12 col-xl-12">
     <p-table scrollHeight="321px" scrollable="true" #dt [columns]="cols" [value]="data" [paginator]="true" [rows]="50" [paginator]="true"

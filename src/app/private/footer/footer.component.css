@@ -9,7 +9,11 @@
 footer p{  padding: 0;margin:0;    } */
 
 footer {
-  background-color: #555;
+  background-color:#f52c2c;
+  border-color: #f52c2c;
   color: white;
-  padding: 15px;
+  padding: 5px;
+  position: fixed;
+  top:600px;
+  width:100%;
 }

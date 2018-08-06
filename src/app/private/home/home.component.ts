@@ -1,8 +1,9 @@
-import { PopupsComponent } from './../../popups/popups.component';
 import { Component, OnInit } from '@angular/core';
 import { HTTPService } from '../../Providers/httpservice';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { PopupsComponent } from '../../shared/popups/popups.component';
+import { GalleryPopupComponent } from '../../shared/gallery-popup/gallery-popup.component';
 
 @Component({
   selector: 'app-private-home',
@@ -27,7 +28,7 @@ export class PrivateHomeComponent implements OnInit {
       .subscribe((response: any) => {
         this.data = response.city || [];
         this.totalRecords = this.data.length;
-        console.log(this.data);
+        // console.log(this.data);
       }, (e) => {
         console.log(e);
       });
@@ -64,6 +65,26 @@ export class PrivateHomeComponent implements OnInit {
     this.bsModalRef.content.closeBtnName = 'Close';
 
 
+  }
+
+  openGalleryModel(){
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+    };
+
+    this.bsModalRef = this.modalService.show(
+                      GalleryPopupComponent, 
+                      {
+                        initialState,
+                        class: 'gray modal-lg'
+                      }
+                    );
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
 

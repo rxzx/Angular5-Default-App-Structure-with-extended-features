@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Gallery</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <img src="assets/images/1.png" alt="first slide" style="display: block; width: 100%;">
+      <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+      <img src="assets/images/3.png" alt="third slide" style="display: block; width: 100%;">
+    </div>
+  </div> -->
+  <carousel>
+    <slide>
+      <img src="assets/images/1.png" alt="first slide" style="display: block; width: 100%;">
+    </slide>
+    <slide>
+      <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+    </slide>
+    <slide>
+      <img src="assets/images/3.png" alt="third slide" style="display: block; width: 100%;">
+    </slide>
+  </carousel>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+</div>

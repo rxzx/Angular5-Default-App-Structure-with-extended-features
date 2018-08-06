@@ -3,8 +3,11 @@ header{
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
-  background-color: #f52c2c;
+  background-color: #d9534f;
+  border-color: #d43f3a;
 }
+
+
 
 header h2{  padding-top: 2%    }
 header a{ color: #fff;text-decoration: none;font-weight: 600;}
@@ -14,10 +17,26 @@ header div{ padding:1%;}
   border-radius: 0;
 }
 .row.content {height: 450px}
+
+
 @media screen and (max-width: 767px) {
   .sidenav {
     height: auto;
     padding: 15px;
   }
   .row.content {height:auto;}
+}
+
+
+nav{
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #f52c2c;
+  border-color: #f52c2c;
+}
+
+nav a{
+  color: #fff;
 }
