@@ -15,8 +15,7 @@ import { PublicModule } from './public/public.module';
 import { HTTPService } from './Providers/httpservice';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
-import {ToastModule} from 'primeng/toast';
-import {MessageService} from 'primeng/api';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,14 +29,14 @@ import {MessageService} from 'primeng/api';
     AppRoutingModule,
     PublicModule,
     PrivateModule,
-    ToastModule
+    ToastrModule.forRoot(),
+
   ],
   providers: [
     HttpClient,
     HTTPService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
-    MessageService
   ],
   bootstrap: [AppComponent],
   schemas: [
