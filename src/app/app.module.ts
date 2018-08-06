@@ -17,10 +17,12 @@ import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
+import { PopupsComponent } from './popups/popups.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PopupsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,9 @@ import {MessageService} from 'primeng/api';
     PublicModule,
     PrivateModule,
     ToastModule
+  ],
+  entryComponents:[
+    PopupsComponent
   ],
   providers: [
     HttpClient,

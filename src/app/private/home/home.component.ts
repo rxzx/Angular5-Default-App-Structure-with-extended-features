@@ -1,5 +1,8 @@
+import { PopupsComponent } from './../../popups/popups.component';
 import { Component, OnInit } from '@angular/core';
 import { HTTPService } from '../../Providers/httpservice';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-private-home',
@@ -12,8 +15,10 @@ export class PrivateHomeComponent implements OnInit {
   public cols: any[];
   public totalRecords: number;
   public loading: boolean;
+  public bsModalRef: BsModalRef;
   constructor(
-    private api: HTTPService
+    private api: HTTPService,
+    private modalService: BsModalService
   ) { }
 
 
@@ -35,6 +40,23 @@ export class PrivateHomeComponent implements OnInit {
     ];
 
     this.loading = true;
+
+  }
+
+  openModel(){
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+      title: 'Modal with component'
+    };
+
+    this.bsModalRef = this.modalService.show(PopupsComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+
 
   }
 

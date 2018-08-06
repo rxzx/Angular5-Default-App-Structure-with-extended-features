@@ -13,7 +13,13 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule,
 
   ],
-  declarations: [PublicHeaderComponent, PublicFooterComponent, PublicHomeComponent, PublicSigninComponent, PublicComponent],
+  declarations: [
+    PublicHeaderComponent, 
+    PublicFooterComponent, 
+    PublicHomeComponent, 
+    PublicSigninComponent, 
+    PublicComponent
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
