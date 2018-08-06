@@ -11,7 +11,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { PopupsComponent } from '../popups/popups.component';
 import { PrivateComponent } from './private.component';
-
+import { AboutComponent } from './about/about.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,10 +27,12 @@ import { PrivateComponent } from './private.component';
     PrivateFooterComponent,
     PrivateHeaderComponent,
     PrivateHomeComponent,
-    PopupsComponent
+    PopupsComponent,
+    AboutComponent
   ],
   entryComponents:[
     PopupsComponent
   ],
+
 })
 export class PrivateModule { }
