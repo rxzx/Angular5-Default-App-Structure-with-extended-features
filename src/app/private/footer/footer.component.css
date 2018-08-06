@@ -1,4 +1,4 @@
-footer{
+/* footer{
   text-align: center;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,4 +6,10 @@ footer{
   background-color: #f52c2c;margin-top: 20px;
 }
 
-footer p{  padding: 0;margin:0;    }
+footer p{  padding: 0;margin:0;    } */
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}

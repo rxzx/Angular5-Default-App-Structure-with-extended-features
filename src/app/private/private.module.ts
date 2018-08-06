@@ -8,6 +8,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,11 +18,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalModule.forRoot()
 
   ],
-  declarations: [
-    PrivateFooterComponent,
-    PrivateHeaderComponent,
-    PrivateHomeComponent,
-    PrivateComponent
-  ]
+
+  declarations: [PrivateFooterComponent, PrivateHeaderComponent, PrivateHomeComponent, PrivateComponent, AboutComponent]
+
 })
 export class PrivateModule { }
