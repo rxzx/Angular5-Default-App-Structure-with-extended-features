@@ -1,5 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
@@ -9,9 +9,12 @@ import { setTheme } from 'ngx-bootstrap/utils';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private messageService: MessageService) {
+  constructor(private toastrService: ToastrService) {
     this.addSingle();
     setTheme('bs3');
+    setTimeout(() => {
+      this.toastrService.success('Hello world!', 'Toastr fun!', { closeButton: true });
+    }, 1000);
   }
   addSingle() {
   }

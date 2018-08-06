@@ -1,3 +1,4 @@
+import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,8 +16,6 @@ import { PublicModule } from './public/public.module';
 import { HTTPService } from './Providers/httpservice';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
-import {ToastModule} from 'primeng/toast';
-import {MessageService} from 'primeng/api';
 import { PopupsComponent } from './popups/popups.component';
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import { PopupsComponent } from './popups/popups.component';
     AppRoutingModule,
     PublicModule,
     PrivateModule,
-    ToastModule
+    ToastrModule.forRoot(),
+
   ],
   entryComponents:[
     PopupsComponent
@@ -42,7 +42,6 @@ import { PopupsComponent } from './popups/popups.component';
     HTTPService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
-    MessageService
   ],
   bootstrap: [AppComponent],
   schemas: [
