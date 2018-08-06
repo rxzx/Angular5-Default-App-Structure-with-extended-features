@@ -54,7 +54,13 @@ export class PrivateHomeComponent implements OnInit {
       title: 'Modal with component'
     };
 
-    this.bsModalRef = this.modalService.show(PopupsComponent, {initialState});
+    this.bsModalRef = this.modalService.show(
+                      PopupsComponent, 
+                      {
+                        initialState,
+                        class: 'gray modal-lg'
+                      }
+                    );
     this.bsModalRef.content.closeBtnName = 'Close';
 
 

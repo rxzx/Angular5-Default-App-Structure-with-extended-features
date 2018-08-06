@@ -11,5 +11,4 @@ export class HTTPService {
   getData() {
     return this.http.get(`${this.baseUrl}assets/data/election.json`);
   }
-
 }

@@ -5,6 +5,15 @@
   </button>
 </div>
 <div class="modal-body">
+  <div class="form-group">
+    <label>Search City </label>
+    <input 
+      [(ngModel)]="customSelected" 
+      [typeahead]="statesComplex" 
+      typeaheadOptionField="name" 
+      placeholder="Search City"
+      class="form-control" />
+  </div>
   <ul *ngIf="list.length">
     <li *ngFor="let item of list">{{item}}</li>
   </ul>

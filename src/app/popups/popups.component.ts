@@ -1,5 +1,6 @@
+import { HTTPService } from './../Providers/httpservice';
 import { Component, OnInit } from '@angular/core';
-import { BsModalRef } from '../../../node_modules/ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-popups',
@@ -10,12 +11,36 @@ export class PopupsComponent implements OnInit {
   public title: string;
   public closeBtnName: string;
   public list: any[] = [];
+
+  public customSelected: string;
+  public statesComplex: any[] = [];
+
+
   constructor(
-    public bsModalRef: BsModalRef
+    public bsModalRef: BsModalRef,
+    private http: HTTPService
   ) { }
 
   ngOnInit() {
     this.list.push('PROFIT!!!');
+    this.http.getData().subscribe((res: any) => {
+
+    });
+
+    this.statesComplex =  [
+      { id: 1, name: 'Alabama', region: 'South' },
+      { id: 2, name: 'Alaska', region: 'West' },
+      { id: 3, name: 'Arizona', region: 'West' },
+      { id: 4, name: 'Arkansas', region: 'South' },
+      { id: 5, name: 'California', region: 'West' },
+      { id: 6, name: 'Colorado', region: 'West' },
+      { id: 7, name: 'Connecticut', region: 'Northeast' },
+      { id: 8, name: 'Delaware', region: 'South' },
+      { id: 9, name: 'Florida', region: 'South' }
+    ];
+
+
+
   }
 
 }
