@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PublicHeaderComponent } from './header/header.component';
@@ -11,6 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     AppRoutingModule,
+    ReactiveFormsModule
 
   ],
   declarations: [

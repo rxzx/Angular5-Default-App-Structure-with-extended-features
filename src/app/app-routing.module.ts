@@ -11,7 +11,7 @@ import { PublicHomeComponent } from './public/home/home.component';
 import { AboutComponent } from './private/about/about.component';
 import { GalleryComponent } from './private/gallery/gallery.component';
 const routes: Routes = [
-  { path: '', redirectTo: 'user/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {
     path: '',
     component: PublicComponent,
