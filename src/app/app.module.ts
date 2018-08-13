@@ -26,6 +26,10 @@ import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
     PrivateModule,
     ToastrModule.forRoot(),
   ],
+  exports: [
+    ToastrModule,
+    FormsModule,
+  ],
   providers: [
     HttpClient,
     HTTPService,

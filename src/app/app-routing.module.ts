@@ -10,6 +10,7 @@ import { PublicSigninComponent } from './public/signin/signin.component';
 import { PublicHomeComponent } from './public/home/home.component';
 import { AboutComponent } from './private/about/about.component';
 import { GalleryComponent } from './private/gallery/gallery.component';
+import { DemoChartsComponent } from './private/demo-charts/demo-charts.component';
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'home', component: PrivateHomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'gallery', component: GalleryComponent },
+      { path: 'demo-charts', component: DemoChartsComponent },
 
     ]
   }

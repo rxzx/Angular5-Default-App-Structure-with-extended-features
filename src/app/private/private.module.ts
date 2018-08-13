@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrivateFooterComponent } from './footer/footer.component';
 import { PrivateHeaderComponent } from './header/header.component';
@@ -11,16 +11,18 @@ import { AboutComponent } from './about/about.component';
 import { SharedModule } from '../shared/shared.module';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EmbedVideo } from 'ngx-embed-video';
-import { HttpModule } from '../../../node_modules/@angular/http';
+import { DemoChartsComponent } from './demo-charts/demo-charts.component';
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule,
     DataTableModule,
     TableModule,
     HttpModule,
     EmbedVideo.forRoot(),
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   declarations: [
     PrivateComponent,
@@ -28,7 +30,8 @@ import { HttpModule } from '../../../node_modules/@angular/http';
     PrivateHeaderComponent,
     PrivateHomeComponent,
     AboutComponent,
-    GalleryComponent
+    GalleryComponent,
+    DemoChartsComponent
   ]
 })
 export class PrivateModule { }

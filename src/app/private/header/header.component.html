@@ -22,7 +22,8 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <span><i class="fas fa-home"></i> Admin Panel</span>
+        <span>
+          <i class="fas fa-home"></i> Admin Panel</span>
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -30,11 +31,14 @@
         <li [routerLinkActive]="['active']" [routerLink]="['/user/home']">
           <a>Home</a>
         </li>
+        <li [routerLinkActive]="['active']" [routerLink]="['/user/demo-charts']">
+          <a>Charts</a>
+        </li>
         <li [routerLinkActive]="['active']" [routerLink]="['/user/about']">
           <a>About</a>
         </li>
         <li>
-          <a [routerLinkActive]="['active']" [routerLink]="['/user/gallery']" >Gallery</a>
+          <a [routerLinkActive]="['active']" [routerLink]="['/user/gallery']">Gallery</a>
         </li>
         <li>
           <a href="javascript:;">Contact</a>
