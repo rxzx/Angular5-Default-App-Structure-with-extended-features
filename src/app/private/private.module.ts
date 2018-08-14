@@ -1,3 +1,4 @@
+import { ChartModule } from 'angular-highcharts';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrivateFooterComponent } from './footer/footer.component';
@@ -22,7 +23,8 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     EmbedVideo.forRoot(),
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule
   ],
   declarations: [
     PrivateComponent,

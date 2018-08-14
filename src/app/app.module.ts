@@ -11,6 +11,7 @@ import { PublicModule } from './public/public.module';
 import { HTTPService } from './Providers/httpservice';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +29,14 @@ import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
   ],
   exports: [
     ToastrModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
     HttpClient,
     HTTPService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent],
   schemas: [

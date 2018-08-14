@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ng:serve":"ng serve --proxy-config proxy.config.json"
+    "ng:serve": "ng serve --proxy-config proxy.config.json"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +22,9 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "angular-highcharts": "^5.2.13",
     "core-js": "^2.4.1",
+    "highcharts": "^6.1.1",
     "moment": "^2.22.2",
     "ngx-bootstrap": "^2.0.5",
     "ngx-embed-video": "^0.3.0",
@@ -36,6 +38,7 @@
     "@angular/cli": "~1.7.4",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "@types/highcharts": "^5.0.26",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/lodash": "^4.14.115",
