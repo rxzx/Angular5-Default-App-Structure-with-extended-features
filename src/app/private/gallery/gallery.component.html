@@ -1,8 +1,24 @@
-<div class="container">
+<div id="mediaGallery" class="container">
   <div class="row">
-    <h2>Gallery</h2>
+    <h2> Image Gallery</h2>
+    <hr>
     <div class="col-md-12">
-      <div [innerHtml]="iframe_html"></div>
+      <div class="col-md-3" *ngFor="let i of urls">
+        <img [src]="i" class="thumbImage">
+      </div>
     </div>
   </div>
+  <hr>
+  <div class="row">
+    <h2> Video Gallery</h2>
+    <hr>
+    <div class="col-md-12">
+      <div class="col-md-4" *ngFor="let f of iframes">
+          <div [innerHtml]="f" class="videoItem"></div> 
+      </div>
+      <!-- <div [innerHtml]="iframe_html"></div> -->
+    </div>
+  </div>
+
+
 </div>
