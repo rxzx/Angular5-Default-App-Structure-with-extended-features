@@ -16,7 +16,9 @@ export class DemoChartsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    setInterval(() => {
+      this.add();
+    },500);
   }
 
   add() {
