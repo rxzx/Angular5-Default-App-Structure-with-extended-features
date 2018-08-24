@@ -14,16 +14,18 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { EmbedVideo } from 'ngx-embed-video';
 import { DemoChartsComponent } from './demo-charts/demo-charts.component';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
     DataTableModule,
     TableModule,
     HttpModule,
     EmbedVideo.forRoot(),
     SharedModule,
-    AppRoutingModule,
     ChartModule
   ],
   declarations: [

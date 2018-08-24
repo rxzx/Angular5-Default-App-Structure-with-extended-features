@@ -8,12 +8,12 @@ import { PublicSigninComponent } from './signin/signin.component';
 import { PublicComponent } from './public.component';
 import { AppRoutingModule } from '../app-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule
-
   ],
   declarations: [
     PublicHeaderComponent, 

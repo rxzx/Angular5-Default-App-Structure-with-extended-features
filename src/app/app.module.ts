@@ -4,7 +4,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PublicModule } from './public/public.module';
@@ -21,8 +20,6 @@ import { StorageService } from './Providers/storageservice';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     PublicModule,
     PrivateModule,
@@ -30,7 +27,7 @@ import { StorageService } from './Providers/storageservice';
   ],
   exports: [
     ToastrModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [
     HttpClient,
