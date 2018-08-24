@@ -8,15 +8,16 @@ export class StorageService {
     }
 
     getPropertyFromLS(key) {
-        JSON.stringify(window.localStorage.getItem(key));
+        return JSON.parse(window.localStorage.getItem(key));
     }
 
     setPropertyFromLS(key, value) {
-        window.localStorage.setItem(key, JSON.parse(value));
+        window.localStorage.setItem(key, JSON.stringify(value));
     }
 
     removePropertyFromLS(key){
         window.localStorage.removeItem(key);
+        return true;
     }
 
 

@@ -3,6 +3,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/models';
 import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
+import { StorageService } from '../../Providers/storageservice';
+import { StorageKey } from '../../shared/enums/storagekey';
 
 @Component({
   selector: 'app-signin',
@@ -15,10 +17,11 @@ export class PublicSigninComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastrService:ToastrService,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService,
+    private storage: StorageService
   ) {
-    this.signInForm = formBuilder.group({
+    this.signInForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -27,14 +30,15 @@ export class PublicSigninComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
-    let signInData:User = this.signInForm.value;
-    if(signInData.username.toLowerCase() === 'admin' && signInData.password.toLowerCase() === 'admin' ){
+  onSubmit() {
+    let signInData: User = this.signInForm.value;
+    if (signInData.username.toLowerCase() === 'admin' && signInData.password.toLowerCase() === 'admin') {
+      this.storage.setPropertyFromLS(StorageKey.IsLoggedIn,true);
       this.router.navigate(['user/home']);
-    }else{
+    } else {
       this.toastrService.error('Username or password is wrong', 'Error!', { closeButton: true });
-    } 
-     
+    }
+
   }
 
 }

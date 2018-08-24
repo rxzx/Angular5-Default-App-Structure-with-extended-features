@@ -1,18 +1,3 @@
-<!-- <header>
-    <div class="row">
-      <div class="col-md-4">
-        <h2><i class="fas fa-home"></i> Admin Panel</h2>
-      </div>
-      <div class="col-md-1">
-        <a href="#">Home</a>
-      </div>
-      <div class="col-md-1">
-        <a href="#">Link2</a>
-      </div>
-      <div class="col-md-6"></div>
-    </div>
-  </header> -->
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -29,16 +14,16 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li [routerLinkActive]="['active']" [routerLink]="['/user/home']">
-          <a>Grid</a>
+          <a href="javascript:;">Grid</a>
         </li>
         <li [routerLinkActive]="['active']" [routerLink]="['/user/demo-charts']">
-          <a>Charts</a>
+          <a href="javascript:;">Charts</a>
         </li>
         <li [routerLinkActive]="['active']" [routerLink]="['/user/gallery']">
-          <a>Media</a>
+          <a href="javascript:;">Media</a>
         </li>
         <li [routerLinkActive]="['active']" [routerLink]="['/user/about']">
-          <a>Comming soon</a>
+          <a href="javascript:;">Comming soon</a>
         </li>
         <li>
           <a href="javascript:;">Contact</a>
@@ -46,8 +31,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#">
-            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+          <a href="javascript:;" (click)="logout()">
+            <span class="glyphicon glyphicon-log-out"></span> Logout</a>
         </li>
       </ul>
     </div>

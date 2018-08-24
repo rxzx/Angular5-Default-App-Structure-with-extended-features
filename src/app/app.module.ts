@@ -12,6 +12,7 @@ import { HTTPService } from './Providers/httpservice';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { StorageService } from './Providers/storageservice';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   providers: [
     HttpClient,
     HTTPService,
+    StorageService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy }

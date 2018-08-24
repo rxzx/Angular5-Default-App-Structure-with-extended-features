@@ -1,24 +1,22 @@
 import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { StorageService } from './Providers/storageservice';
+import { StorageKey } from './shared/enums/storagekey';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AlwaysAuthGuard implements CanActivate {
-  myvalue = true;
   constructor(
-
     private router: Router,
+    private storage: StorageService
   ) { }
-  canActivate() {
-    // this.myvalue = true;
 
-    // if (this.myvalue) {
-    //   return false;
-    // } else {
-    //   //   window.alert("You don't have permission to view this page");
-    //   // this.router.navigate(['/sign-in']);
-    //   return true;
-    // }
-    return true;
+  canActivate() {
+    let isLoggedIn = this.storage.getPropertyFromLS(StorageKey.IsLoggedIn);
+    if(!isLoggedIn){
+      return true;
+    }
+    return false;
   }
 }
 
@@ -26,20 +24,18 @@ export class AlwaysAuthGuard implements CanActivate {
 @Injectable()
 export class OnlyLoggedInUsersGuard implements CanActivate {
   constructor(
-
     private router: Router,
+    private storage: StorageService,
+    private toastr: ToastrService
   ) { }
   myvalue = true;
   canActivate() {
 
-    if (this.myvalue) {
-      // window.alert('Access');
-        // this.router.navigate(['/private/home']);
+    let isLoggedIn = this.storage.getPropertyFromLS(StorageKey.IsLoggedIn);
+    if(isLoggedIn){
       return true;
-    } else {
-        // window.alert('You dont have permission to view this page');
-      this.router.navigate(['/sign-in']);
-      return false;
     }
+    this.toastr.info("You are not logged in","Info!");
+    return false;
   }
 }

@@ -19,6 +19,19 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC8V_b4lKT8tqZsn3KIwvCLxmuLzgFE5zA",
+      authDomain: "testpushnotification-17d04.firebaseapp.com",
+      databaseURL: "https://testpushnotification-17d04.firebaseio.com",
+      projectId: "testpushnotification-17d04",
+      storageBucket: "testpushnotification-17d04.appspot.com",
+      messagingSenderId: "336489112481"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body style="margin:0%">
   <app-root></app-root>

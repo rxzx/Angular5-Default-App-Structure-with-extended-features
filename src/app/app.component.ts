@@ -1,6 +1,9 @@
 import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import { setTheme } from 'ngx-bootstrap/utils';
+import { StorageService } from './Providers/storageservice';
+import { StorageKey } from './shared/enums/storagekey';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +12,22 @@ import { setTheme } from 'ngx-bootstrap/utils';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private toastrService: ToastrService) {
-    this.addSingle();
+  constructor(
+    private toastr: ToastrService,
+    private storage: StorageService,
+    private router: Router
+  ) {
     setTheme('bs3');
-    setTimeout(() => {
-      this.toastrService.success('Hello world!', 'Toastr fun!', { closeButton: true });
-    }, 1000);
+    this.redirection()
   }
-  addSingle() {
+
+  redirection() {
+    let isLoggedIn = this.storage.getPropertyFromLS(StorageKey.IsLoggedIn);
+    if (isLoggedIn) {
+      this.router.navigate(['/user/home']);
+    } else {
+      this.router.navigate(['/sign-in']);
+    }
   }
+
 }

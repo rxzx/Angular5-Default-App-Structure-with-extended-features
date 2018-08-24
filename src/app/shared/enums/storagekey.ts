@@ -1,3 +1,3 @@
 export enum StorageKey{
-    'IsLoogedIn' = 0
+    'IsLoggedIn' = 0
 }

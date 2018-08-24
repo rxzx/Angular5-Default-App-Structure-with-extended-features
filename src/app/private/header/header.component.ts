@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../Providers/storageservice';
+import { StorageKey } from '../../shared/enums/storagekey';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-private-header',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private storage:StorageService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.storage.removePropertyFromLS(StorageKey.IsLoggedIn);
+    this.router.navigate(["/sign-in"]);
   }
 
 }
