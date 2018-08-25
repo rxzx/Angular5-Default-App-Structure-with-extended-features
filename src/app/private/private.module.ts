@@ -21,7 +21,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    DataTableModule,
     TableModule,
     HttpModule,
     EmbedVideo.forRoot(),
@@ -36,6 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     GalleryComponent,
     DemoChartsComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class PrivateModule { }

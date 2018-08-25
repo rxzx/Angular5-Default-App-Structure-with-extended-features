@@ -1,6 +1,5 @@
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
