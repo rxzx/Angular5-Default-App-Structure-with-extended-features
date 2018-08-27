@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Upload File(s)</h1>
+    </div>
+    <hr>
+    <div class="col-md-12">
+      <input type="file" ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)" />
+    </div>
+    <div class="col-md-12" *ngFor="let item of uploader.queue;let i = index;">
+      <a href="javascript:;">{{i+1}} - {{item?.file?.name}}</a>
+      <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </div>
+    <div class="col-md-12" *ngIf="uploader.getNotUploadedItems().length">
+      <button type="button" class="btn btn-success btn-md" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+        <span class="glyphicon glyphicon-upload"></span> Upload all
+      </button>
+    </div>
+    <div class="col-md-12">
+      <h1>Mask Input</h1>
+    </div>
+    <hr>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="pwd">Phone Mask *</label>
+        <input type="text" mask="92-399-9999999" placeholder="92-399-9999999">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h1>Social Login</h1>
+    </div>
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary" (click)="loginWithFacebook()">
+        Login with Facebook</button>
+    </div>
+    <hr>
+  </div>
+</div>

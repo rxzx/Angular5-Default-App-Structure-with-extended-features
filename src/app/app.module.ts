@@ -13,7 +13,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { StorageService } from './Providers/storageservice';
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

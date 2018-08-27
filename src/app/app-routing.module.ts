@@ -11,6 +11,7 @@ import { PublicHomeComponent } from './public/home/home.component';
 import { AboutComponent } from './private/about/about.component';
 import { GalleryComponent } from './private/gallery/gallery.component';
 import { DemoChartsComponent } from './private/demo-charts/demo-charts.component';
+import { FeatureComponent } from './private/feature/feature.component';
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
       { path: 'about', component: AboutComponent },
       { path: 'gallery', component: GalleryComponent },
       { path: 'demo-charts', component: DemoChartsComponent },
-
+      { path: 'features', component: FeatureComponent }
     ]
   }
 ];
