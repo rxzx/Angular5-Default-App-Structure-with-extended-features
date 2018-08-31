@@ -5,7 +5,7 @@ import { SocialLoginService, Provider } from 'ngx-social-login';
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
-  styleUrls: ['./feature.component.css']
+  styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent implements OnInit {
   public uploader: FileUploader = new FileUploader({ url: '/api' });

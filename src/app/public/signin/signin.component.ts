@@ -9,7 +9,7 @@ import { StorageKey } from '../../shared/enums/storagekey';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.scss']
 })
 export class PublicSigninComponent implements OnInit {
 

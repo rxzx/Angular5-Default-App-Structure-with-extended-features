@@ -5,7 +5,7 @@ import { HTTPService } from '../../Providers/httpservice';
 @Component({
   selector: 'app-popups',
   templateUrl: './popups.component.html',
-  styleUrls: ['./popups.component.css']
+  styleUrls: ['./popups.component.scss']
 })
 export class PopupsComponent implements OnInit {
   public title: string;

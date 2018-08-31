@@ -5,7 +5,7 @@ import { HTTPService } from '../../Providers/httpservice';
 @Component({
   selector: 'app-gallery-popup',
   templateUrl: './gallery-popup.component.html',
-  styleUrls: ['./gallery-popup.component.css']
+  styleUrls: ['./gallery-popup.component.scss']
 })
 export class GalleryPopupComponent implements OnInit {
   public title: string;

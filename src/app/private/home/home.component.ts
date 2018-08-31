@@ -8,7 +8,7 @@ import { GalleryPopupComponent } from '../../shared/gallery-popup/gallery-popup.
 @Component({
   selector: 'app-private-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class PrivateHomeComponent implements OnInit {
   public data: any;
