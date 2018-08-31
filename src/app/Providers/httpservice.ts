@@ -11,4 +11,22 @@ export class HTTPService {
   getData() {
     return this.http.get(`${this.baseUrl}assets/data/election.json`);
   }
+
+  startPolling() {
+    setTimeout(() => {
+      this.polling();
+    }, 1500);
+  }
+
+  polling() {
+    setTimeout(() => {
+      this.http.get(`${this.baseUrl}assets/data/election.json`)
+        .subscribe((response: any) => {
+          console.log("polling");
+          this.startPolling();
+        });
+    }, 2500);
+  }
+
+
 }

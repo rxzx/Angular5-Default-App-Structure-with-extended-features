@@ -1,5 +1,5 @@
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -11,6 +11,7 @@ import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { StorageService } from './Providers/storageservice';
+import { MyHttpInterceptor } from './Providers/my-http-interceptor';
 @NgModule({
   declarations: [
     AppComponent
@@ -34,7 +35,8 @@ import { StorageService } from './Providers/storageservice';
     StorageService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor,  multi: true }
   ],
   bootstrap: [AppComponent],
   schemas: [

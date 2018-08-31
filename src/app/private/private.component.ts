@@ -1,3 +1,4 @@
+import { HTTPService } from './../Providers/httpservice';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http: HTTPService
+  ) { }
 
   ngOnInit() {
+    // this.http.startPolling();
   }
 
 }
