@@ -18,7 +18,7 @@ export class AppComponent {
     private router: Router
   ) {
     setTheme('bs3');
-    this.redirection()
+    this.redirection();
   }
 
   redirection() {

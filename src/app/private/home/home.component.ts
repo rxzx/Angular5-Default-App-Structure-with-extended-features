@@ -17,10 +17,13 @@ export class PrivateHomeComponent implements OnInit {
   public totalRecords: number;
   public loading: boolean;
   public bsModalRef: BsModalRef;
+  public blocked: boolean;
   constructor(
     private api: HTTPService,
     private modalService: BsModalService
-  ) { }
+  ) {
+    this.blocked = true;
+   }
 
 
   ngOnInit() {
@@ -28,6 +31,7 @@ export class PrivateHomeComponent implements OnInit {
       .subscribe((response: any) => {
         this.data = response.city || [];
         this.totalRecords = this.data.length;
+        this.blocked = false;
         // console.log(this.data);
       }, (e) => {
         console.log(e);

@@ -19,6 +19,7 @@ import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DemoChartsComponent } from './demo-charts/demo-charts.component';
 import { FeatureComponent } from './feature/feature.component';
+import {BlockUIModule} from 'primeng/blockui';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { FeatureComponent } from './feature/feature.component';
           }
         }
       }
-    )
+    ),
+    BlockUIModule
   ],
   declarations: [
     PrivateComponent,

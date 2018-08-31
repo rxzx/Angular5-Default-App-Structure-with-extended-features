@@ -27,7 +27,7 @@ import { MyHttpInterceptor } from './Providers/my-http-interceptor';
   ],
   exports: [
     ToastrModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     HttpClient,
@@ -36,7 +36,7 @@ import { MyHttpInterceptor } from './Providers/my-http-interceptor';
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor,  multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
   schemas: [
