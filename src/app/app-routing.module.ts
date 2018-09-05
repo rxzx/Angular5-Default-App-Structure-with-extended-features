@@ -12,6 +12,7 @@ import { AboutComponent } from './private/about/about.component';
 import { GalleryComponent } from './private/gallery/gallery.component';
 import { DemoChartsComponent } from './private/demo-charts/demo-charts.component';
 import { FeatureComponent } from './private/feature/feature.component';
+import { FormLoaderComponent } from './private/form-loader/form-loader.component';
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
       { path: 'about', component: AboutComponent },
       { path: 'gallery', component: GalleryComponent },
       { path: 'demo-charts', component: DemoChartsComponent },
-      { path: 'features', component: FeatureComponent }
+      { path: 'features', component: FeatureComponent },
+      { path: 'form-loader', component: FormLoaderComponent }
     ]
   }
 ];

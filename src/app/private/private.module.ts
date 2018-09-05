@@ -20,6 +20,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { DemoChartsComponent } from './demo-charts/demo-charts.component';
 import { FeatureComponent } from './feature/feature.component';
 import {BlockUIModule} from 'primeng/blockui';
+import { FormLoaderComponent } from './form-loader/form-loader.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {BlockUIModule} from 'primeng/blockui';
     AboutComponent,
     GalleryComponent,
     DemoChartsComponent,
-    FeatureComponent
+    FeatureComponent,
+    FormLoaderComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
