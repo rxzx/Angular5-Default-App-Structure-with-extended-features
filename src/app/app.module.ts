@@ -12,6 +12,8 @@ import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { StorageService } from './Providers/storageservice';
 import { MyHttpInterceptor } from './Providers/my-http-interceptor';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,6 +26,7 @@ import { MyHttpInterceptor } from './Providers/my-http-interceptor';
     PublicModule,
     PrivateModule,
     ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase,"AdminApp")
   ],
   exports: [
     ToastrModule,

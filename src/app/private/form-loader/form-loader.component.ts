@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-form-loader',
@@ -11,11 +12,15 @@ export class FormLoaderComponent implements OnInit {
   public json: any;
   public contactForm: FormGroup;
   public countries: string[];
-  public requestType: string[];
-  constructor() {
+  public requestTypes: string[];
+  constructor(
+    firebase:FirebaseApp
+  ) {
     this.countries = ['USA', 'Germany', 'Italy', 'France'];
-    this.requestType = ['Claim', 'Feedback', 'Help Request'];
+    this.requestTypes = ['Claim', 'Feedback', 'Help Request'];
     this.contactForm = this.createFormGroup();
+
+    // firebase.messaging().;
   }
 
   ngOnInit() {
@@ -49,6 +54,14 @@ export class FormLoaderComponent implements OnInit {
       requestType: new FormControl(),
       text: new FormControl()
     });
+  }
+
+  onSubmit(){
+
+  }
+
+  revert(){
+    
   }
 
 }
