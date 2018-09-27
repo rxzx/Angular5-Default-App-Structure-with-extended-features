@@ -11,16 +11,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxSocialLoginModule } from 'ngx-social-login';
-import { PrivateFooterComponent } from './footer/footer.component';
-import { PrivateHeaderComponent } from './header/header.component';
 import { PrivateHomeComponent } from './home/home.component';
 import { PrivateComponent } from './private.component';
-import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DemoChartsComponent } from './demo-charts/demo-charts.component';
 import { FeatureComponent } from './feature/feature.component';
-import {BlockUIModule} from 'primeng/blockui';
+import { BlockUIModule } from 'primeng/blockui';
 import { FormLoaderComponent } from './form-loader/form-loader.component';
+import { StaticPageModule } from './static-pages/static-pages.module';
+import { PrivateFooterComponent } from './footer/footer.component';
+import { PrivateHeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -37,9 +37,6 @@ import { FormLoaderComponent } from './form-loader/form-loader.component';
     NgxMaskModule.forRoot(),
     NgxSocialLoginModule.init(
       {
-        // google: {
-        //   client_id: 'YOUR_CLIENT_ID'
-        // },
         facebook: {
           initOptions: {
             appId: '30831827156266'
@@ -47,14 +44,14 @@ import { FormLoaderComponent } from './form-loader/form-loader.component';
         }
       }
     ),
-    BlockUIModule
+    BlockUIModule,
+    StaticPageModule,
   ],
   declarations: [
     PrivateComponent,
     PrivateFooterComponent,
     PrivateHeaderComponent,
     PrivateHomeComponent,
-    AboutComponent,
     GalleryComponent,
     DemoChartsComponent,
     FeatureComponent,

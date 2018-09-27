@@ -8,11 +8,11 @@ import { PrivateComponent } from './private/private.component';
 import { PrivateHomeComponent } from './private/home/home.component';
 import { PublicSigninComponent } from './public/signin/signin.component';
 import { PublicHomeComponent } from './public/home/home.component';
-import { AboutComponent } from './private/about/about.component';
 import { GalleryComponent } from './private/gallery/gallery.component';
 import { DemoChartsComponent } from './private/demo-charts/demo-charts.component';
 import { FeatureComponent } from './private/feature/feature.component';
 import { FormLoaderComponent } from './private/form-loader/form-loader.component';
+import { AboutComponent } from './private/static-pages/about/about.component';
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {
@@ -25,17 +25,23 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'user',
+    path: 'admin',
     component: PrivateComponent,
     canActivate: [OnlyLoggedInUsersGuard],
     children: [
-      { path: '', redirectTo: 'user/home', pathMatch: 'full' },
+      { path: '', redirectTo: 'admin/home', pathMatch: 'full' },
       { path: 'home', component: PrivateHomeComponent },
-      { path: 'about', component: AboutComponent },
       { path: 'gallery', component: GalleryComponent },
       { path: 'demo-charts', component: DemoChartsComponent },
       { path: 'features', component: FeatureComponent },
-      { path: 'form-loader', component: FormLoaderComponent }
+      { path: 'form-loader', component: FormLoaderComponent },
+      {
+        path: 'static-pages',
+        children: [
+          { path: '', redirectTo: 'admin/static-pages/about', pathMatch: 'full' },
+          { path: 'about', component: AboutComponent },
+        ]
+      }
     ]
   }
 ];

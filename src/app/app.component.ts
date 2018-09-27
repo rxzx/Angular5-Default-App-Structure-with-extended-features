@@ -24,7 +24,7 @@ export class AppComponent {
   redirection() {
     let isLoggedIn = this.storage.getPropertyFromLS(StorageKey.IsLoggedIn);
     if (isLoggedIn) {
-      this.router.navigate(['/user/home']);
+      this.router.navigate(['/admin/home']);
     } else {
       this.router.navigate(['/sign-in']);
     }
