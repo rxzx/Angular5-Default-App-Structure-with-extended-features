@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HTTPService } from '../../Providers/httpservice';
 
 @Component({
   selector: 'app-public-home',

@@ -1,14 +1,14 @@
 import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { StorageService } from './Providers/storageservice';
 import { StorageKey } from './shared/enums/storagekey';
 import { ToastrService } from 'ngx-toastr';
+import { StorageServiceProvider } from './Providers/storage.service';
 
 @Injectable()
 export class AlwaysAuthGuard implements CanActivate {
   constructor(
     private router: Router,
-    private storage: StorageService
+    private storage: StorageServiceProvider
   ) { }
 
   canActivate() {
@@ -25,7 +25,7 @@ export class AlwaysAuthGuard implements CanActivate {
 export class OnlyLoggedInUsersGuard implements CanActivate {
   constructor(
     private router: Router,
-    private storage: StorageService,
+    private storage: StorageServiceProvider,
     private toastr: ToastrService
   ) { }
   myvalue = true;

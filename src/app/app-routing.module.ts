@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent } from './public/public.component';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
-
 import { PrivateComponent } from './private/private.component';
 import { PrivateHomeComponent } from './private/home/home.component';
 import { PublicSigninComponent } from './public/signin/signin.component';
@@ -13,6 +12,7 @@ import { DemoChartsComponent } from './private/demo-charts/demo-charts.component
 import { FeatureComponent } from './private/feature/feature.component';
 import { FormLoaderComponent } from './private/form-loader/form-loader.component';
 import { AboutComponent } from './private/static-pages/about/about.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   {

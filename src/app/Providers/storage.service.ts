@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 
 @Injectable()
-export class StorageService {
+export class StorageServiceProvider {
     private baseUrl = '/';
     constructor(
     ) {

@@ -6,14 +6,15 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PublicModule } from './public/public.module';
-import { HTTPService } from './Providers/httpservice';
+import { HttpServiceProvider } from './Providers/http.service';
 import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { StorageService } from './Providers/storageservice';
-import { MyHttpInterceptor } from './Providers/my-http-interceptor';
+import { StorageServiceProvider} from './Providers/storage.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { AppHttpInterceptor } from './Providers/app-http-interceptor';
+import { UtilServiceProvider } from './Providers/util.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -34,12 +35,13 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     HttpClient,
-    HTTPService,
-    StorageService,
+    HttpServiceProvider,
+    StorageServiceProvider,
+    UtilServiceProvider,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
   schemas: [

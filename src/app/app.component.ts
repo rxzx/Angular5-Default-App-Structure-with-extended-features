@@ -1,9 +1,10 @@
 import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import { setTheme } from 'ngx-bootstrap/utils';
-import { StorageService } from './Providers/storageservice';
 import { StorageKey } from './shared/enums/storagekey';
 import { Router } from '@angular/router';
+import { StorageServiceProvider } from './Providers/storage.service';
+import { routerTransition } from './animations/route-transition';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   title = 'app';
   constructor(
     private toastr: ToastrService,
-    private storage: StorageService,
+    private storage: StorageServiceProvider,
     private router: Router
   ) {
     setTheme('bs3');

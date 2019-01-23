@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HTTPService } from '../../Providers/httpservice';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { PopupsComponent } from '../../shared/popups/popups.component';
 import { GalleryPopupComponent } from '../../shared/gallery-popup/gallery-popup.component';
+import { HttpServiceProvider } from '../../Providers/http.service';
 
 @Component({
   selector: 'app-private-home',
@@ -19,7 +19,7 @@ export class PrivateHomeComponent implements OnInit {
   public bsModalRef: BsModalRef;
   public blocked: boolean;
   constructor(
-    private api: HTTPService,
+    private api: HttpServiceProvider,
     private modalService: BsModalService
   ) {
     this.blocked = true;

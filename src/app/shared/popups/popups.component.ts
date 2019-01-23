@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { HTTPService } from '../../Providers/httpservice';
+import { HttpServiceProvider } from '../../Providers/http.service';
 
 @Component({
   selector: 'app-popups',
@@ -18,7 +18,7 @@ export class PopupsComponent implements OnInit {
 
   constructor(
     public bsModalRef: BsModalRef,
-    private http: HTTPService
+    private http: HttpServiceProvider
   ) { }
 
   ngOnInit() {

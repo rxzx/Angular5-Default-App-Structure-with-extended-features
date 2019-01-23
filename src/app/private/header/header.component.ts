@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from '../../Providers/storageservice';
+import { StorageServiceProvider } from '../../Providers/storage.service';
 import { StorageKey } from '../../shared/enums/storagekey';
 
 @Component({
@@ -11,7 +11,7 @@ import { StorageKey } from '../../shared/enums/storagekey';
 export class PrivateHeaderComponent implements OnInit {
 
   constructor(
-    private storage:StorageService,
+    private storage:StorageServiceProvider,
     private router: Router
   ) { }
 

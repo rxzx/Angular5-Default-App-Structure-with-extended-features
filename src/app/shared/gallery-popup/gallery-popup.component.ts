@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from '../../../../node_modules/ngx-bootstrap/modal';
-import { HTTPService } from '../../Providers/httpservice';
+import { HttpServiceProvider } from '../../Providers/http.service';
 
 @Component({
   selector: 'app-gallery-popup',
@@ -13,7 +13,7 @@ export class GalleryPopupComponent implements OnInit {
   public list: any[] = [];
   constructor(
     public bsModalRef: BsModalRef,
-    private http: HTTPService
+    private http: HttpServiceProvider
   ) { }
 
   ngOnInit() {

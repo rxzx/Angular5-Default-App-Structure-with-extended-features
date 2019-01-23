@@ -3,8 +3,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/models';
 import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
-import { StorageService } from '../../Providers/storageservice';
 import { StorageKey } from '../../shared/enums/storagekey';
+import { StorageServiceProvider } from '../../Providers/storage.service';
 
 @Component({
   selector: 'app-signin',
@@ -19,7 +19,7 @@ export class PublicSigninComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private toastrService: ToastrService,
-    private storage: StorageService
+    private storage: StorageServiceProvider
   ) {
     this.signInForm = this.formBuilder.group({
       username: ['', Validators.required],

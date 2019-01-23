@@ -1,4 +1,4 @@
-import { RequestError } from './../shared/models/index';
+import { RequestError } from '../shared/models/index';
 import { ToastrService } from 'ngx-toastr';
 import { Injectable } from "@angular/core";
 import { HttpRequest, HttpHandler, HttpEvent } from "@angular/common/http";
@@ -6,7 +6,7 @@ import { Observable } from "rxjs/Rx";
 
 
 @Injectable()
-export class MyHttpInterceptor {
+export class AppHttpInterceptor {
     constructor(
         private toastr: ToastrService,
     ) { }
