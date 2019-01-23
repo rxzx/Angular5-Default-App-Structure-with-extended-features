@@ -6,8 +6,8 @@
         <div class="gridHeader">
           <div class="clear"></div>
           <div class="row">
-            <h4 class="col-md-6 pull-left"><span class="fa fa-list"></span> List</h4>
-            <div class="col-md-6 pull-right">
+            <h4 class="pull-left"><span class="fa fa-list"></span> LIST</h4>
+            <div class="pull-right">
               <button class="btn btn-default" (click)="openModel()">Open Popup</button>
               <button class="btn btn-default" (click)="openGalleryModel()">View Image</button>
               <button class="btn btn-default" (click)="dt.exportCSV()">Export</button>
@@ -20,7 +20,7 @@
           <th *ngFor="let col of columns">
             {{col.header}}
           </th>
-          <th>Actions</th>
+          <th class="actionColText" style="width:8%">Actions</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
@@ -29,7 +29,7 @@
             <span class="ui-column-title">{{col.header}}</span>
             {{rowData[col.field]}}
           </td>
-          <td class="actionColText">
+          <td class="actionColText" style="width:8%">
             <a href="javascript:;" class="editBtn">
               <span class="fa fa-edit"></span>
             </a> &nbsp;
