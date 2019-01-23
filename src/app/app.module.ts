@@ -11,10 +11,10 @@ import { PrivateModule } from './private/private.module';
 import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './AlwaysAuthGuard ';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { StorageServiceProvider} from './Providers/storage.service';
-import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AppHttpInterceptor } from './Providers/app-http-interceptor';
 import { UtilServiceProvider } from './Providers/util.service';
+// import { AngularFireModule } from '@angular/fire';
 @NgModule({
   declarations: [
     AppComponent
@@ -27,7 +27,7 @@ import { UtilServiceProvider } from './Providers/util.service';
     PublicModule,
     PrivateModule,
     ToastrModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase,"AdminApp")
+    // AngularFireModule.initializeApp(environment.firebase,"AdminApp")
   ],
   exports: [
     ToastrModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { FirebaseApp } from 'angularfire2';
+// import { FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-form-loader',
@@ -14,7 +14,7 @@ export class FormLoaderComponent implements OnInit {
   public countries: string[];
   public requestTypes: string[];
   constructor(
-    firebase:FirebaseApp
+    // firebase:FirebaseApp
   ) {
     this.countries = ['USA', 'Germany', 'Italy', 'France'];
     this.requestTypes = ['Claim', 'Feedback', 'Help Request'];
